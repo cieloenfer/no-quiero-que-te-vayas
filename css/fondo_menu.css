@@ -5,6 +5,7 @@ body {
     background-size: 100% auto;
     padding: 30px;
     display: inline;
+    
 }
 
 body#solucion
@@ -164,10 +165,25 @@ section div {
 
 h1 {
   text-align: center;
-  font-family:'Dancing Script',cursive;
+  font-family:monospace;
   color: #df561bdc;
   padding-top: 20px;
+  display: block;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 12ch;
+  position:absolute;
+  right:0;
+  width:0;
+  border-left: 1px solid #000;
+  animation: escribir 5s steps(30) alternate;
 }
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
+}
+
 
 p {
  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -326,10 +342,19 @@ body#solucion {
 
 @media screen and (min-width: 1200px) {}
 */
-@media screen and (min-width: 320px) {}
-  
-  #ulnav
-  /*ulnav para first mobile sera menú hamnurguesa con boostrap */
+@media screen and (min-width: 576px){
+ .body{
+  background-image: url(../imagenes/fondo.png);
+  background-repeat: no-repeat;
+}
+ 
+#menufirst {
+  display: inline;
+}
+
+#menu{
+  display:none;
+}  /*navbar-nav para first mobile sera menú hamnurguesa con boostrap */
 
 aside ul li {
   padding: 2px;
@@ -353,24 +378,61 @@ aside ul li {
   grid-area: video;
 }
 
-#imagen {
-  grid-area:imagen; 
+#form {
+  grid-area:form;
 }
 
-#form (
-grid-area:form;
-)
-
-.banner{
-  width: 100%; 
-  height: 512px;
-}
-
-@media screen and (min-width: 1200px)  
+@media screen and (min-width: 1200px){
+  .body{
+    background-image: url(../imagenes/fondo.png);
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      padding: 30px;
+      display: inline;
   
-  #ulnav{
-  display:inline;
+  }  
+ 
+  #menufirst{
+   display: none;
+  }
+  
+  #menu{
+ display:inline;
   grid-area: ulnav;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #cf9c85;
+  }
+  
+  .menu li {
+    float: left;
+  }
+  
+  .menu li a {
+    display: block;
+    color:#a05c3f;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Water Brush', cursive;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  .menu li a:hover {
+    background-color:#cf9c85;
+  }
+  
+  .menu .active {
+    background-color: #e70c72;
+    color: #ffffff;
+  }
 }
 
 aside ul li {
@@ -399,11 +461,12 @@ aside ul li {
   grid-area:imagen; 
 }
 
-#form (
-grid-area:form;
-)
+#form {
+  grid-area:form;
+}
 
 .banner{
   width: 100%; 
   height: 512px;
+}
 }
